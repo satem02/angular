@@ -1,0 +1,35 @@
+<div class="main-container">
+    <mat-accordion [multi]="true">
+        <mat-expansion-panel >
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Creator Info
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <app-new-authorization-one  [requestData]="model.CreatorInfo.FormAction" (responseData)="creatorChange($event)" [childPropertyName]="'CreatorInfo'"  [parentFormGroup]="parentFormGroup" >
+            </app-new-authorization-one>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel >
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Checker Info
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <app-new-authorization-two  [requestData]="model?.CheckerInfo?.FormAction" (responseData)="checkerChange($event)" [childPropertyName]="'CheckerInfo'"  [parentFormGroup]="parentFormGroup" >
+            </app-new-authorization-two>
+        </mat-expansion-panel>
+
+    </mat-accordion>
+    <div class="row" style="padding-top: 10px !important;">
+        <div class="col-md-9">
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" style="width: 100%; height: 50px !important;" [disabled]="!parentFormGroup.valid"
+                (click)="nextButtonClicked()">SAVE</button>
+        </div>
+    </div>
+</div>
