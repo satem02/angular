@@ -5,7 +5,7 @@ import { FormInfo, CreatorInfo, CreatorFormAction, CheckerInfo, CheckerFormActio
 @Component({
   selector: 'app-new-authorization-form',
   templateUrl: './new-authorization-form.component.html',
-  styleUrls: ['./new-authorization-form.component.css']
+  styleUrls: ['./new-authorization-form.component.scss']
 })
 export class NewAuthorizationFormComponent implements OnInit {
   parentFormGroup: FormGroup;

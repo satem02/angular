@@ -7,7 +7,7 @@
                 </mat-panel-title>
             </mat-expansion-panel-header>
 
-            <app-new-authorization-one  [requestData]="model.CreatorInfo.FormAction" (responseData)="creatorChange($event)" [childPropertyName]="'CreatorInfo'"  [parentFormGroup]="parentFormGroup" >
+            <app-new-authorization-one  [requestData]="model?.CreatorInfo?.FormAction" (responseData)="creatorChange($event)" [childPropertyName]="'CreatorInfo'"  [parentFormGroup]="parentFormGroup" >
             </app-new-authorization-one>
         </mat-expansion-panel>
 

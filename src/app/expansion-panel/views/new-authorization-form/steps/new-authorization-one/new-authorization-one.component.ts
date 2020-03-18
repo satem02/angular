@@ -5,7 +5,7 @@ import { NewAuthorizationBaseComponent } from '../base/new-authorization-base.co
 @Component({
   selector: 'app-new-authorization-one',
   templateUrl: './new-authorization-one.component.html',
-  styleUrls: ['./new-authorization-one.component.css'],
+  styleUrls: ['./new-authorization-one.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
