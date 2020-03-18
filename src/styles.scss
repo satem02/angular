@@ -2,3 +2,53 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.main-container{
+    box-shadow: 0 2px 2px rgba(255, 6, 6, 0.24), 0 0 2px rgba(255, 6, 6, 0.24);
+    padding-bottom: 20px !important;
+    margin: 1% !important;
+  }
+  
+  .expansion-item{
+    padding: 20px !important;
+  }
+  
+  .expansion-item-header{
+    padding: 20px !important;
+  }
+  
+  .mat-expansion-panel {
+    padding-bottom: 10px !important;
+  }
+  
+  .mat-expansion-panel-header{
+    background: rgba(0,0,0,.03) !important;
+    padding: 16px !important;
+    font-size: 21px !important;
+    line-height: 32px !important;
+    margin-bottom: 5px !important;
+  }
+  
+  .mat-form-field {
+    width: 100% !important;  
+    height: 35px !important;
+    font-size: 20px !important;
+    margin-left: 10px !important;
+  }
+  
+  input[readonly]{
+    background: rgba(116, 113, 113, 0.03);
+  }
+  
+  .col {
+    padding-bottom: 15px !important;
+  }
+  
+  .mat-expansion-indicator {
+    position: absolute !important;
+  }
+  
+  .mat-expansion-panel-header-title{
+    padding-left: 20px !important;
+  }
