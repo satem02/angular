@@ -31,6 +31,8 @@ export class NewAuthorizationFormComponent implements OnInit {
 
 
   nextButtonClicked() {
+    console.log(this.parentFormGroup.value);
+    console.log(this.model);
   }
 
   creatorChange($event){

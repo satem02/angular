@@ -1,35 +1,27 @@
-import { Component, OnInit, Injector, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, Input, Output, EventEmitter, TemplateRef, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-new-authorization-base',
-  template: `
-  Is Editable: {{isEditable}}
-  Is Disable: {{isDisable}}
-  Parent FormGroup: {{parentFormGroup}}
-  Child PropertyName: {{childPropertyName}}
-  Child RequestData: {{requestData}}
-  Child ResponseData: {{responseData}}
-  `
+  selector: 'app-new-authorization-base',  
+  templateUrl: './new-authorization-base.component.html',
+  styleUrls: ['./new-authorization-base.component.scss']
 })
-export class NewAuthorizationBaseComponent  {
-
+export  class NewAuthorizationBaseComponent {
+  
   @Input() visible: boolean;
   @Input() readonly: boolean;
   @Input() parentFormGroup: FormGroup;
   @Input() childPropertyName: string;
   @Input() requestData: any;
-  @Output() responseData = new EventEmitter<any>();;
+  @Output() responseData = new EventEmitter<any>();
+  @Input() templateRef: TemplateRef<any>;
 
-  private childFormGroup: FormGroup;
 
   public addGroupToParentForm(form: FormGroup) {
 
-    this.childFormGroup = form;
-
     this.parentFormGroup.addControl(
       this.childPropertyName,
-      this.childFormGroup
+      form
     );
 
   }
