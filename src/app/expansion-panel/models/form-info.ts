@@ -13,12 +13,7 @@ export class FormInfo {
   }
   
   export class CreatorFormAction {
-    Id: number;
-    ActionType: number;
-    ActionDate: string;
-    NameSurname: string;
-    Title: string;
-    Description: string;
+    BaseAction: BaseFormAction;
   }  
 
   export class CheckerInfo {
@@ -26,12 +21,7 @@ export class FormInfo {
   }
   
   export class CheckerFormAction {
-    Id: number;
-    ActionType: number;
-    ActionDate: string;
-    NameSurname: string;
-    Title: string;
-    Description: string;
+    BaseAction: BaseFormAction;
   }
   
   export class ApproveInfo {
@@ -39,6 +29,10 @@ export class FormInfo {
   }
   
   export class ApproveFormAction {
+    BaseAction: BaseFormAction;
+  }
+
+  export class BaseFormAction {
     Id: number;
     ActionType: number;
     ActionDate: string;
@@ -46,4 +40,3 @@ export class FormInfo {
     Title: string;
     Description: string;
   }
-  

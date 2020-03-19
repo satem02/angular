@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { FormInfo, CreatorInfo, CreatorFormAction, CheckerInfo, CheckerFormAction } from '../../models';
+import { FormInfo, CreatorInfo, CreatorFormAction, CheckerInfo, CheckerFormAction, BaseFormAction } from '../../models';
 
 @Component({
   selector: 'app-new-authorization-form',
@@ -45,10 +45,12 @@ export class NewAuthorizationFormComponent implements OnInit {
     var result = new FormInfo();
     result.CreatorInfo = new CreatorInfo();
     result.CreatorInfo.FormAction = new CreatorFormAction();
-    result.CreatorInfo.FormAction.NameSurname = "Şafak";
+    result.CreatorInfo.FormAction.BaseAction = new BaseFormAction();
+    result.CreatorInfo.FormAction.BaseAction.NameSurname = "Şafak";
     result.CheckerInfo = new CheckerInfo();
     result.CheckerInfo.FormAction = new CheckerFormAction();
-    result.CheckerInfo.FormAction.NameSurname = "Temel";
+    result.CheckerInfo.FormAction.BaseAction = new BaseFormAction();
+    result.CheckerInfo.FormAction.BaseAction.NameSurname = "Temel";
 
     return result; 
   }

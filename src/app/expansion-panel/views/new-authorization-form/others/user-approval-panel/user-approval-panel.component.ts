@@ -1,27 +1,27 @@
+
 import { Component, OnInit, forwardRef, Injector } from '@angular/core';
 import { NG_VALUE_ACCESSOR, FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { NewAuthorizationBaseComponent } from '../base/new-authorization-base.component';
+import { NewAuthorizationBaseComponent } from '../../..';
 
 @Component({
-  selector: 'app-new-authorization-one',
-  templateUrl: './new-authorization-one.component.html',
-  styleUrls: ['./new-authorization-one.component.scss'],
+  selector: 'app-user-approval-panel',
+  templateUrl: './user-approval-panel.component.html',
+  styleUrls: ['./user-approval-panel.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => NewAuthorizationOneComponent),
+      useExisting: forwardRef(() => UserApprovalPanelComponent),
       multi: true
     }
   ]
 })
-export class NewAuthorizationOneComponent extends NewAuthorizationBaseComponent implements OnInit {
+export class UserApprovalPanelComponent extends NewAuthorizationBaseComponent implements OnInit {
 
   form: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
     super();
   }
-  change($event){}
 
   ngOnInit() {
     this.initValue();

@@ -2,12 +2,12 @@ import { Component, Input, Output, EventEmitter, TemplateRef, OnInit } from '@an
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-new-authorization-base',  
+  selector: 'app-new-authorization-base',
   templateUrl: './new-authorization-base.component.html',
   styleUrls: ['./new-authorization-base.component.scss']
 })
-export  class NewAuthorizationBaseComponent {
-  
+export class NewAuthorizationBaseComponent {
+
   @Input() visible: boolean;
   @Input() readonly: boolean;
   @Input() parentFormGroup: FormGroup;
@@ -33,5 +33,17 @@ export  class NewAuthorizationBaseComponent {
     );
   }
 
+  public addGroupToFormControls(formGroup: FormGroup) {
+
+    Object.keys(formGroup.controls).forEach(key => {
+      let control = formGroup.controls[key];
+      this.parentFormGroup.addControl(
+        key,
+        new FormControl(control.value, control.validator, control.asyncValidator)
+      );
+      this.parentFormGroup.setValidators(control.validator);
+    });
+
+  }
 
 }

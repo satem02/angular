@@ -2,13 +2,14 @@
     <form class="form" [formGroup]="form">
         <div class="row">
             <div class="col">
-                <mat-form-field>
-                    <input matInput required placeholder="Name" name="NameSurname" [(ngModel)]="requestData.NameSurname"
-                        formControlName="NameSurname">
-                </mat-form-field>
+
             </div>
         </div>
     </form>
 </ng-template>
+
+
+<app-user-approval-panel  [requestData]="requestData" [parentFormGroup]="form" [childPropertyName]="'BaseAction'"  >
+</app-user-approval-panel>
 
 <app-new-authorization-base [templateRef]='childTemplate'></app-new-authorization-base>

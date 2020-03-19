@@ -1,0 +1,10 @@
+<form class="form" [formGroup]="form">
+    <div class="row">
+        <div class="col">
+            <mat-form-field>
+                <input matInput required placeholder="Name Surname" name="NameSurname"
+                    [(ngModel)]="requestData.BaseAction.NameSurname" formControlName="NameSurname">
+            </mat-form-field>
+        </div>
+    </div>
+</form>
