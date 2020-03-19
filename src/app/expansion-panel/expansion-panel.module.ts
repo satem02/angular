@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NewAuthorizationFormComponent, NewAuthorizationOneComponent, NewAuthorizationTwoComponent } from './views';
 import { ExpansionPanelRoutingModule } from './expansion-panel-routing.module';
-import { CustomMaterialModule } from './material.module';
+import { CustomMaterialModule } from './modules/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [NewAuthorizationFormComponent,NewAuthorizationOneComponent,NewAuthorizationTwoComponent],
