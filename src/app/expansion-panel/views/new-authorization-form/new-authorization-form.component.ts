@@ -15,7 +15,6 @@ export class NewAuthorizationFormComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     this.model = this.getDummyService();
-    console.log(this.model);
   }
 
   ngOnInit() {
@@ -32,7 +31,6 @@ export class NewAuthorizationFormComponent implements OnInit {
 
 
   nextButtonClicked() {
-    console.log(this.model);
   }
 
   creatorChange($event){
