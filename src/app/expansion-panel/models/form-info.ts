@@ -10,6 +10,7 @@ export class FormInfo {
 
   export class CreatorInfo {
     FormAction: CreatorFormAction;
+    Country:string;
   }
   
   export class CreatorFormAction {
@@ -18,6 +19,7 @@ export class FormInfo {
 
   export class CheckerInfo {
     FormAction: CheckerFormAction;
+    City:string;
   }
   
   export class CheckerFormAction {

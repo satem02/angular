@@ -1,10 +1,47 @@
-<form class="form" [formGroup]="form">
-    <div class="row">
-        <div class="col">
-            <mat-form-field>
-                <input matInput required placeholder="Name Surname" name="NameSurname"
-                    [(ngModel)]="requestData.BaseAction.NameSurname" formControlName="NameSurname">
-            </mat-form-field>
+<div class="main-container" >
+    <mat-toolbar >User</mat-toolbar>
+    <form class="form" [formGroup]="form">
+
+        <div class="row" style="padding-top: 10px !important;" >
+
+            <div class="col-6">
+                <div class="col">
+                    <mat-radio-group [(ngModel)]="requestData.BaseAction.ActionType" formControlName="ActionType">
+                        <mat-radio-button [value]="1">ACCEPTED</mat-radio-button>
+                        <mat-radio-button [value]="2">REJECTED</mat-radio-button>
+                        <mat-radio-button [value]="3">CANCELLED</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="col">
+                    <mat-form-field>
+                        <textarea matInput  placeholder="Description" name="Description"
+                            [(ngModel)]="requestData.BaseAction.Description" formControlName="Description"
+                            matTextareaAutosize [matAutosizeMinRows]="5" [matAutosizeMaxRows]="5">
+                        </textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="col">
+                    <mat-form-field>
+                        <input matInput  placeholder="Name Surname" name="NameSurname"
+                            [(ngModel)]="requestData.BaseAction.NameSurname" formControlName="NameSurname">
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field>
+                        <input matInput  placeholder="Title" name="Title"
+                            [(ngModel)]="requestData.BaseAction.Title" formControlName="Title">
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field>
+                        <input matInput  placeholder="ActionDate" name="ActionDate"
+                            [(ngModel)]="requestData.BaseAction.ActionDate" formControlName="ActionDate">
+                    </mat-form-field>
+                </div>
+            </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>

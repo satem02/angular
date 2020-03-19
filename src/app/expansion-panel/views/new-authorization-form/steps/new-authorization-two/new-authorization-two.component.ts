@@ -33,7 +33,7 @@ export class NewAuthorizationTwoComponent extends NewAuthorizationBaseComponent 
 
   createForm() {
     this.form = this.formBuilder.group({
-      NameSurname: new FormControl()
+      City: new FormControl()
     });
 
     this.addGroupToParentForm(this.form);
