@@ -25,19 +25,19 @@
             <div class="col-6">
                 <div class="col">
                     <mat-form-field>
-                        <input matInput  placeholder="Name Surname" name="NameSurname"
+                        <input matInput  placeholder="Name Surname" name="NameSurname" [readonly]="true"
                             [(ngModel)]="requestData.BaseAction.NameSurname" formControlName="NameSurname">
                     </mat-form-field>
                 </div>
                 <div class="col">
                     <mat-form-field>
-                        <input matInput  placeholder="Title" name="Title"
+                        <input matInput  placeholder="Title" name="Title" [readonly]="true"
                             [(ngModel)]="requestData.BaseAction.Title" formControlName="Title">
                     </mat-form-field>
                 </div>
                 <div class="col">
                     <mat-form-field>
-                        <input matInput  placeholder="ActionDate" name="ActionDate"
+                        <input matInput  placeholder="ActionDate" name="ActionDate" [readonly]="true"
                             [(ngModel)]="requestData.BaseAction.ActionDate" formControlName="ActionDate">
                     </mat-form-field>
                 </div>

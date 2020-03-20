@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { FormInfo, CreatorInfo, CreatorFormAction, CheckerInfo, CheckerFormAction, BaseFormAction } from '../../models';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-new-authorization-form',
@@ -10,7 +11,7 @@ import { FormInfo, CreatorInfo, CreatorFormAction, CheckerInfo, CheckerFormActio
 export class NewAuthorizationFormComponent implements OnInit {
   parentFormGroup: FormGroup;
   model: FormInfo = new FormInfo();
-  constructor(
+  constructor(private datePipe: DatePipe,
     private cdRef: ChangeDetectorRef,
     private formBuilder: FormBuilder
   ) {
@@ -20,7 +21,7 @@ export class NewAuthorizationFormComponent implements OnInit {
   ngOnInit() {
     this.createForm();
   }
-  
+
   ngAfterViewInit() {
     this.cdRef.detectChanges();
   }
@@ -35,23 +36,30 @@ export class NewAuthorizationFormComponent implements OnInit {
     console.log(this.model);
   }
 
-  creatorChange($event){
+  creatorChange($event) {
   }
 
-  checkerChange($event){
+  checkerChange($event) {
   }
-  
-  getDummyService(){
+
+  getDummyService() {
     var result = new FormInfo();
     result.CreatorInfo = new CreatorInfo();
     result.CreatorInfo.FormAction = new CreatorFormAction();
-    result.CreatorInfo.FormAction.BaseAction = new BaseFormAction();
-    result.CreatorInfo.FormAction.BaseAction.NameSurname = "Şafak";
+    result.CreatorInfo.FormAction.BaseAction = this.fillBaseAction();
     result.CheckerInfo = new CheckerInfo();
     result.CheckerInfo.FormAction = new CheckerFormAction();
-    result.CheckerInfo.FormAction.BaseAction = new BaseFormAction();
-    result.CheckerInfo.FormAction.BaseAction.NameSurname = "Temel";
+    result.CheckerInfo.FormAction.BaseAction = this.fillBaseAction();
 
-    return result; 
+    return result;
+  }
+
+  fillBaseAction() {
+    let baseAction = new BaseFormAction();
+    baseAction.NameSurname = "Şafak Temel";
+    baseAction.Title = "Software Developer";
+    baseAction.ActionDate = this.datePipe.transform(new Date(), "dd-MM-yyyy")
+
+    return baseAction;
   }
 }
