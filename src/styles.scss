@@ -26,16 +26,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .mat-expansion-panel-header{
     background: rgba(0,0,0,.03) !important;
     padding: 16px !important;
-    font-size: 21px !important;
-    line-height: 32px !important;
+    font-size: 18px !important;
+    line-height: 25px !important;
     margin-bottom: 5px !important;
   }
   
   .mat-form-field {
     width: 100% !important;  
-    height: 35px !important;
-    font-size: 20px !important;
-    margin-left: 10px !important;
+    height: 24px !important;
+    font-size: 15px !important;
   }
   
   input[readonly]{
@@ -52,4 +51,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   
   .mat-expansion-panel-header-title{
     padding-left: 20px !important;
+  }
+  .mat-radio-label-content{
+    font-size: 11px !important;
   }

@@ -1,5 +1,5 @@
 
-import { Component, OnInit, forwardRef, Injector } from '@angular/core';
+import { Component, OnInit, forwardRef, Injector, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR, FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { NewAuthorizationBaseComponent } from '../../..';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
@@ -22,6 +22,7 @@ import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 export class UserApprovalPanelComponent extends NewAuthorizationBaseComponent implements OnInit {
 
   form: FormGroup;
+  @Input() toolbarText: string;
 
   constructor(private formBuilder: FormBuilder) {
     super();
