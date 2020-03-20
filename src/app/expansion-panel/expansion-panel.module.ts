@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { NewAuthorizationFormComponent, NewAuthorizationOneComponent, NewAuthorizationTwoComponent , NewAuthorizationBaseComponent, UserApprovalPanelComponent } from './views';
@@ -15,6 +15,7 @@ import { CustomMaterialModule } from './modules/material.module';
     FormsModule,
     ExpansionPanelRoutingModule,
     CustomMaterialModule
-  ]
+  ],
+  providers: [DatePipe]
 })
 export class ExpansionPanelModule { }

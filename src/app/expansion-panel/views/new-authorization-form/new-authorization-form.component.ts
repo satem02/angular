@@ -58,7 +58,7 @@ export class NewAuthorizationFormComponent implements OnInit {
     let baseAction = new BaseFormAction();
     baseAction.NameSurname = "Şafak Temel";
     baseAction.Title = "Software Developer";
-    baseAction.ActionDate = this.datePipe.transform(new Date(), "dd-MM-yyyy")
+    baseAction.ActionDate = this.datePipe.transform(new Date(), "dd/MM/yyyy")
 
     return baseAction;
   }
