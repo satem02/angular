@@ -11,8 +11,8 @@
     </form>
 </ng-template>
 
+<app-new-authorization-base [templateRef]='childTemplate'></app-new-authorization-base>
 
 <app-user-approval-panel  [requestData]="requestData" [parentFormGroup]="form" [childPropertyName]="'BaseAction'"  >
 </app-user-approval-panel>
 
-<app-new-authorization-base [templateRef]='childTemplate'></app-new-authorization-base>
