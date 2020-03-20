@@ -6,7 +6,7 @@
 
             <div class="col-6">
                 <div class="col">
-                    <mat-radio-group [(ngModel)]="requestData.BaseAction.ActionType" formControlName="ActionType">
+                    <mat-radio-group [(ngModel)]="requestData.BaseAction.ActionType"  (change)="actionTypeChange($event)" formControlName="ActionType">
                         <mat-radio-button [value]="1">ACCEPTED</mat-radio-button>
                         <mat-radio-button [value]="2">REJECTED</mat-radio-button>
                         <mat-radio-button [value]="3">CANCELLED</mat-radio-button>
