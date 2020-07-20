@@ -23,6 +23,7 @@ export class UserApprovalPanelComponent extends NewAuthorizationBaseComponent im
 
   form: FormGroup;
   @Input() toolbarText: string;
+  @Input() readOnly: boolean;
 
   constructor(private formBuilder: FormBuilder) {
     super();
@@ -34,7 +35,6 @@ export class UserApprovalPanelComponent extends NewAuthorizationBaseComponent im
   }
 
   initValue() {
-
   }
 
   createForm() {

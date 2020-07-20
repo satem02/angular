@@ -8,8 +8,6 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 })
 export class NewAuthorizationBaseComponent {
 
-  @Input() visible: boolean;
-  @Input() readonly: boolean;
   @Input() parentFormGroup: FormGroup;
   @Input() childPropertyName: string;
   @Input() requestData: any;

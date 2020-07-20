@@ -6,16 +6,16 @@
 
             <div class="col-6">
                 <div class="col">
-                    <mat-radio-group [(ngModel)]="requestData.BaseAction.ActionType"  (change)="actionTypeChange($event)" formControlName="ActionType">
-                        <mat-radio-button [value]="1">ACCEPTED</mat-radio-button>
-                        <mat-radio-button [value]="2">REJECTED</mat-radio-button>
-                        <mat-radio-button [value]="3">CANCELLED</mat-radio-button>
+                    <mat-radio-group [(ngModel)]="requestData.FormAction.BaseAction.ActionType"  (change)="actionTypeChange($event)" formControlName="ActionType">
+                        <mat-radio-button [disabled]="readOnly" [value]="1">ACCEPTED</mat-radio-button>
+                        <mat-radio-button  [disabled]="readOnly" [value]="2">REJECTED</mat-radio-button>
+                        <mat-radio-button  [disabled]="readOnly" [value]="3">CANCELLED</mat-radio-button>
                     </mat-radio-group>
                 </div>
                 <div class="col">
                     <mat-form-field>
-                        <textarea matInput  placeholder="Description" name="Description"
-                            [(ngModel)]="requestData.BaseAction.Description" formControlName="Description"
+                        <textarea matInput  placeholder="Description" name="Description" [readonly]="readOnly"
+                            [(ngModel)]="requestData.FormAction.BaseAction.Description" formControlName="Description"
                             matTextareaAutosize [matAutosizeMinRows]="5" [matAutosizeMaxRows]="5">
                         </textarea>
                     </mat-form-field>
@@ -26,19 +26,19 @@
                 <div class="col">
                     <mat-form-field>
                         <input matInput  placeholder="Name Surname" name="NameSurname" [readonly]="true"
-                            [(ngModel)]="requestData.BaseAction.NameSurname" formControlName="NameSurname">
+                            [(ngModel)]="requestData.FormAction.BaseAction.NameSurname" formControlName="NameSurname">
                     </mat-form-field>
                 </div>
                 <div class="col">
                     <mat-form-field>
                         <input matInput  placeholder="Title" name="Title" [readonly]="true"
-                            [(ngModel)]="requestData.BaseAction.Title" formControlName="Title">
+                            [(ngModel)]="requestData.FormAction.BaseAction.Title" formControlName="Title">
                     </mat-form-field>
                 </div>
                 <div class="col">
                     <mat-form-field>
                         <input matInput  placeholder="ActionDate" name="ActionDate" [readonly]="true"
-                            [(ngModel)]="requestData.BaseAction.ActionDate" formControlName="ActionDate">
+                            [(ngModel)]="requestData.FormAction.BaseAction.ActionDate" formControlName="ActionDate">
                     </mat-form-field>
                 </div>
             </div>

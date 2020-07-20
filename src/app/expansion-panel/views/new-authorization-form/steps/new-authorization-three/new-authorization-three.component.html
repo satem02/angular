@@ -1,0 +1,18 @@
+<ng-template #childTemplate>
+    <form class="form" [formGroup]="form">
+        <div class="row">
+            <div class="col">
+                <mat-form-field>
+                    <input matInput required  [readonly]='requestData.Readonly' placeholder="District" name="District" [(ngModel)]="requestData.District"
+                        formControlName="District">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</ng-template>
+
+<app-new-authorization-base   [templateRef]='childTemplate'></app-new-authorization-base>
+
+<app-user-approval-panel [toolbarText]="'ApproveInfo User'" [readOnly]='requestData.Readonly' [requestData]="requestData" [parentFormGroup]="form" [childPropertyName]="'BaseAction'"  >
+</app-user-approval-panel>
+

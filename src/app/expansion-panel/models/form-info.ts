@@ -11,6 +11,9 @@ export class FormInfo {
   export class CreatorInfo {
     FormAction: CreatorFormAction;
     Country:string;
+    FormExpanded:boolean;
+    Readonly:boolean;
+    Visible:boolean;
   }
   
   export class CreatorFormAction {
@@ -20,6 +23,9 @@ export class FormInfo {
   export class CheckerInfo {
     FormAction: CheckerFormAction;
     City:string;
+    FormExpanded:boolean;
+    Readonly:boolean;
+    Visible:boolean;
   }
   
   export class CheckerFormAction {
@@ -28,6 +34,10 @@ export class FormInfo {
   
   export class ApproveInfo {
     FormAction: ApproveFormAction;
+    District:string;
+    FormExpanded:boolean;
+    Readonly:boolean;
+    Visible:boolean;
   }
   
   export class ApproveFormAction {

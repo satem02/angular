@@ -1,26 +1,38 @@
 <div class="main-container">
     <mat-accordion [multi]="true">
-        <mat-expansion-panel >
-            <mat-expansion-panel-header>
+        <mat-expansion-panel *ngIf="model?.CreatorInfo?.Visible" [expanded]="model?.CreatorInfo?.FormExpanded"  >
+            <mat-expansion-panel-header >
                 <mat-panel-title>
                     Creator Info
                 </mat-panel-title>
             </mat-expansion-panel-header>
 
-            <app-new-authorization-one  [requestData]="model?.CreatorInfo?.FormAction" (responseData)="creatorChange($event)" [childPropertyName]="'CreatorInfo'"  [parentFormGroup]="parentFormGroup" >
+            <app-new-authorization-one  [requestData]="model?.CreatorInfo" (responseData)="creatorChange($event)" [childPropertyName]="'CreatorInfo'"  [parentFormGroup]="parentFormGroup" >
             </app-new-authorization-one>
         </mat-expansion-panel>
 
 
-        <mat-expansion-panel >
+        <mat-expansion-panel *ngIf="model?.CheckerInfo?.Visible" [expanded]="model?.CheckerInfo?.FormExpanded"  >
             <mat-expansion-panel-header>
                 <mat-panel-title>
                     Checker Info
                 </mat-panel-title>
             </mat-expansion-panel-header>
 
-            <app-new-authorization-two  [requestData]="model?.CheckerInfo?.FormAction" (responseData)="checkerChange($event)" [childPropertyName]="'CheckerInfo'"  [parentFormGroup]="parentFormGroup" >
+            <app-new-authorization-two  [requestData]="model?.CheckerInfo" (responseData)="checkerChange($event)" [childPropertyName]="'CheckerInfo'"  [parentFormGroup]="parentFormGroup" >
             </app-new-authorization-two>
+        </mat-expansion-panel>
+
+        
+        <mat-expansion-panel *ngIf="model?.ApproveInfo?.Visible" [expanded]="model?.ApproveInfo?.FormExpanded"  >
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Approve Info
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <app-new-authorization-three  [requestData]="model?.ApproveInfo" (responseData)="checkerChange($event)" [childPropertyName]="'ApproveInfo'"  [parentFormGroup]="parentFormGroup" >
+            </app-new-authorization-three>
         </mat-expansion-panel>
 
     </mat-accordion>

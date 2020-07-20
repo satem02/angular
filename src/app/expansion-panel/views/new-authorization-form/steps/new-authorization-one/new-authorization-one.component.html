@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col">
                 <mat-form-field>
-                    <input matInput required placeholder="Country" name="Country" [(ngModel)]="requestData.Country"
+                    <input matInput required  [readonly]='requestData.Readonly' placeholder="Country" name="Country" [(ngModel)]="requestData.Country"
                         formControlName="Country">
                 </mat-form-field>
             </div>
@@ -11,8 +11,8 @@
     </form>
 </ng-template>
 
-<app-new-authorization-base [templateRef]='childTemplate'></app-new-authorization-base>
+<app-new-authorization-base  [templateRef]='childTemplate'></app-new-authorization-base>
 
-<app-user-approval-panel [toolbarText]="'Creater User'" [requestData]="requestData" [parentFormGroup]="form" [childPropertyName]="'BaseAction'"
+<app-user-approval-panel [toolbarText]="'Creater User'" [readOnly]='requestData.Readonly' [requestData]="requestData" [parentFormGroup]="form" [childPropertyName]="'BaseAction'"
     (responseData)="change($event)">
 </app-user-approval-panel>
